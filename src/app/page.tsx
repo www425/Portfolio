@@ -68,7 +68,6 @@ export default function Home() {
 
       <section className="mb-20">
         <h2 className="text-2xl font-bold text-gray-900 mb-6 text-center">
-          Certificates
         </h2>
         <Carousel
           images={[
