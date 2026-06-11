@@ -28,7 +28,7 @@ export default function AboutPage() {
           </div>
           <div className="flex items-center gap-3 text-gray-700">
             <MapPin className="w-5 h-5 text-blue-600" />
-            <span>上海</span>
+            <span>上海 (现居成都)</span>
           </div>
           <div className="flex items-center gap-3 text-gray-700">
             <Phone className="w-5 h-5 text-blue-600" />

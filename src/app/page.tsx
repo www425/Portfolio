@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import { ArrowRight, Code, Globe, Zap } from "lucide-react";
 import Link from "next/link";
+import Carousel from "@/components/Carousel";
 
 const highlights = [
   {
@@ -13,7 +14,7 @@ const highlights = [
   {
     icon: Globe,
     title: "NLP & AI",
-    desc: "研究方向包括偏见消除、文本分类、RAG 系统等，有 Star 开源项目。",
+    desc: "研究方向包括偏见消除、文本分类、RAG 系统等，有开源项目。",
   },
   {
     icon: Zap,
@@ -46,6 +47,20 @@ export default function Home() {
           <ArrowRight className="w-4 h-4" />
         </Link>
       </motion.section>
+
+      {/* 奖状轮播 */}
+      <section className="mb-20">
+        <h2 className="text-2xl font-bold text-gray-900 mb-6 text-center">
+          Certificates
+        </h2>
+        <Carousel
+          images={[
+            { src: "/certificates/1.jpg", alt: "Certificate 1" },
+            { src: "/certificates/2.jpg", alt: "Certificate 2" },
+            { src: "/certificates/3.jpg", alt: "Certificate 3" },
+          ]}
+        />
+      </section>
 
       {/* Highlights */}
       <section className="grid md:grid-cols-3 gap-8">
