@@ -2,7 +2,8 @@
 title: "Agentic RAG — 多智能体 GraphRAG 系统"
 description: "基于 LangChain/LangGraph 构建的多智能体 RAG 问答系统，支持 FAQ、GraphRAG、Text2Cypher 等多种策略"
 tech: ["Python", "LangChain", "LangGraph", "RAG", "Neo4j", "DeepSeek"]
-github: "https://github.com/xikuan-wang"
+github: "https://github.com/www425/GraphRAG"
+image: "/projects/flowchart.png"
 date: "2026-03"
 ---
 

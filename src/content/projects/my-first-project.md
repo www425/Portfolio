@@ -3,6 +3,7 @@ title: "Star NLP — 文本偏见消除系统"
 description: "基于 VAE 的文本偏见消除框架，支持 Independence / Separation / Sufficiency 三大标准"
 tech: ["Python", "PyTorch", "VAE", "NLP"]
 github: "https://github.com/www425/STAR"
+image: "/projects/framework.png"
 date: "2025-09"
 ---
 

@@ -9,6 +9,7 @@ export interface ProjectMeta {
   tech: string[];
   github?: string;
   live?: string;
+  image?: string;
   date: string;
 }
 
@@ -29,6 +30,7 @@ export function getAllProjects(): ProjectMeta[] {
         tech: data.tech || [],
         github: data.github || null,
         live: data.live || null,
+        image: data.image || null,
         date: data.date || "",
       } as ProjectMeta;
     })
@@ -55,6 +57,7 @@ export function getProjectBySlug(slug: string): {
       tech: data.tech || [],
       github: data.github || null,
       live: data.live || null,
+      image: data.image || null,
       date: data.date || "",
     },
     content,

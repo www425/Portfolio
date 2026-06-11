@@ -48,19 +48,6 @@ export default function Home() {
         </Link>
       </motion.section>
 
-      {/* 奖状轮播 */}
-      <section className="mb-20">
-        <h2 className="text-2xl font-bold text-gray-900 mb-6 text-center">
-          Certificates
-        </h2>
-        <Carousel
-          images={[
-            { src: "/certificates/1.jpg", alt: "Certificate 1" },
-            { src: "/certificates/2.jpg", alt: "Certificate 2" },
-            { src: "/certificates/3.jpg", alt: "Certificate 3" },
-          ]}
-        />
-      </section>
 
       {/* Highlights */}
       <section className="grid md:grid-cols-3 gap-8">
@@ -77,6 +64,19 @@ export default function Home() {
             <p className="text-sm text-gray-600">{item.desc}</p>
           </motion.div>
         ))}
+      </section>
+
+      <section className="mb-20">
+        <h2 className="text-2xl font-bold text-gray-900 mb-6 text-center">
+          Certificates
+        </h2>
+        <Carousel
+          images={[
+            { src: "/certificates/1.jpg", alt: "Certificate 1" },
+            { src: "/certificates/2.jpg", alt: "Certificate 2" },
+            { src: "/certificates/3.jpg", alt: "Certificate 3" },
+          ]}
+        />
       </section>
     </div>
   );
