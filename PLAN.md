@@ -49,8 +49,10 @@ portfolio/
 - [x] 首页（Hero + Highlights，Framer Motion 动画）
 - [x] 项目页面（Markdown 内容管理 + 项目卡片 + 详情页）
 - [x] 关于我页面
-- [ ] 初始化 Git & 推送 GitHub
-- [ ] 连接 Vercel 部署
+- [x] 初始化 Git & 推送 GitHub
+- [x] 连接 Vercel 部署
+- [x] 填入个人信息（王锡宽，华东师范大学，联系方式等）
+- [x] 填入项目内容（Star NLP 偏见消除 + Agentic RAG）
 
 ## Git 工作流
 

@@ -7,18 +7,18 @@ import Link from "next/link";
 const highlights = [
   {
     icon: Code,
-    title: "Clean Code",
-    desc: "Writing maintainable, well-structured code is my priority.",
+    title: "Software Engineering",
+    desc: "华东师范大学软件工程本硕，扎实的计算机基础与工程实践能力。",
   },
   {
     icon: Globe,
-    title: "Web Development",
-    desc: "Building modern web applications with cutting-edge tech.",
+    title: "NLP & AI",
+    desc: "研究方向包括偏见消除、文本分类、RAG 系统等，有 Star 开源项目。",
   },
   {
     icon: Zap,
-    title: "Performance",
-    desc: "Optimized for speed and great user experience.",
+    title: "Full-Stack Dev",
+    desc: "熟练使用 C++/Python/Java，掌握 LangChain、MySQL、前后端开发。",
   },
 ];
 
@@ -33,10 +33,10 @@ export default function Home() {
         className="mb-20"
       >
         <h1 className="text-5xl font-bold mb-4 text-gray-900">
-          Hi, I'm <span className="text-blue-600">Your Name</span>
+          Hi, I'm <span className="text-blue-600">王锡宽</span>
         </h1>
         <p className="text-xl text-gray-600 mb-6">
-          A passionate developer who loves building things for the web.
+          华东师范大学 软件工程本硕 2027届 · 热爱构建有影响力的软件
         </p>
         <Link
           href="/projects"
