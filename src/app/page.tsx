@@ -67,8 +67,6 @@ export default function Home() {
       </section>
 
       <section className="mb-20">
-        <h2 className="text-2xl font-bold text-gray-900 mb-6 text-center">
-        </h2>
         <Carousel
           images={[
             { src: "/certificates/1.jpg", alt: "Certificate 1" },
