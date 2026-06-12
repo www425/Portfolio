@@ -3,24 +3,14 @@
 import { useState } from "react";
 import { ArrowLeft, ExternalLink, GitFork, ChevronDown, ChevronUp } from "lucide-react";
 import Link from "next/link";
-import Markdown from "react-markdown";
-import remarkGfm from "remark-gfm";
+import type { ProjectData } from "@/lib/projects";
 
-interface ProjectData {
-  meta: {
-    slug: string;
-    title: string;
-    description: string;
-    tech: string[];
-    github?: string | null;
-    live?: string | null;
-    image?: string | null;
-  };
-  content: string;
+interface Props {
+  project: ProjectData;
 }
 
-export default function ProjectContent({ project }: { project: ProjectData }) {
-  const { meta, content } = project;
+export default function ProjectContent({ project }: Props) {
+  const { meta, sections } = project;
 
   return (
     <div className="max-w-3xl mx-auto px-4 py-16">
@@ -33,7 +23,7 @@ export default function ProjectContent({ project }: { project: ProjectData }) {
       </Link>
 
       <article>
-        <header className="mb-8">
+        <header className="mb-10">
           <h1 className="text-4xl font-bold text-gray-900 mb-3">
             {meta.title}
           </h1>
@@ -43,7 +33,7 @@ export default function ProjectContent({ project }: { project: ProjectData }) {
             {meta.tech.map((t) => (
               <span
                 key={t}
-                className="text-xs px-2 py-1 bg-gray-100 text-gray-600 rounded-full"
+                className="text-xs px-2 py-1 bg-blue-50 text-blue-700 rounded-full font-medium"
               >
                 {t}
               </span>
@@ -78,17 +68,22 @@ export default function ProjectContent({ project }: { project: ProjectData }) {
 
         <ImageToggle image={meta.image} title={meta.title} />
 
-        <div className="prose prose-gray max-w-none
-          prose-headings:text-gray-900 prose-headings:font-bold
-          prose-h2:text-2xl prose-h2:mt-8 prose-h2:mb-4 prose-h2:pb-2 prose-h2:border-b prose-h2:border-gray-200
-          prose-h3:text-xl prose-h3:mt-6 prose-h3:mb-3
-          prose-p:text-gray-700 prose-p:leading-relaxed prose-p:mb-4
-          prose-strong:text-gray-900 prose-strong:font-semibold
-          prose-ul:list-disc prose-ul:pl-6 prose-ul:space-y-1.5
-          prose-li:text-gray-700
-          prose-code:px-1.5 prose-code:py-0.5 prose-code:bg-gray-100 prose-code:rounded prose-code:text-sm prose-code:font-normal
-          prose-hr:border-gray-200">
-          <Markdown remarkPlugins={[remarkGfm]}>{content}</Markdown>
+        {/* 分段卡片 */}
+        <div className="space-y-6">
+          {sections.map((section) => (
+            <section key={section.title}>
+              <h2 className="text-xl font-bold text-gray-900 mb-3">
+                {section.title}
+              </h2>
+              <ul className="space-y-2 list-disc pl-5 text-gray-700">
+                {section.items.map((item, i) => (
+                  <li key={i}>
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </section>
+          ))}
         </div>
       </article>
     </div>
@@ -107,7 +102,7 @@ function ImageToggle({ image, title }: { image?: string | null; title: string })
         className="inline-flex items-center gap-2 text-sm text-blue-600 hover:text-blue-800 transition-colors"
       >
         {open ? <ChevronUp className="w-4 h-4" /> : <ChevronDown className="w-4 h-4" />}
-        {open ? "Hide architecture diagram" : "Show architecture diagram"}
+        {open ? "Hide diagram" : "Show diagram"}
       </button>
       {open && (
         <div className="mt-4 rounded-xl border border-gray-200 p-2 bg-gray-50">
