@@ -4,6 +4,7 @@ import { useState } from "react";
 import { ArrowLeft, ExternalLink, GitFork, ChevronDown, ChevronUp } from "lucide-react";
 import Link from "next/link";
 import Markdown from "react-markdown";
+import remarkGfm from "remark-gfm";
 
 interface ProjectData {
   meta: {
@@ -77,8 +78,17 @@ export default function ProjectContent({ project }: { project: ProjectData }) {
 
         <ImageToggle image={meta.image} title={meta.title} />
 
-        <div className="prose prose-gray max-w-none">
-          <Markdown>{content}</Markdown>
+        <div className="prose prose-gray max-w-none
+          prose-headings:text-gray-900 prose-headings:font-bold
+          prose-h2:text-2xl prose-h2:mt-8 prose-h2:mb-4 prose-h2:pb-2 prose-h2:border-b prose-h2:border-gray-200
+          prose-h3:text-xl prose-h3:mt-6 prose-h3:mb-3
+          prose-p:text-gray-700 prose-p:leading-relaxed prose-p:mb-4
+          prose-strong:text-gray-900 prose-strong:font-semibold
+          prose-ul:list-disc prose-ul:pl-6 prose-ul:space-y-1.5
+          prose-li:text-gray-700
+          prose-code:px-1.5 prose-code:py-0.5 prose-code:bg-gray-100 prose-code:rounded prose-code:text-sm prose-code:font-normal
+          prose-hr:border-gray-200">
+          <Markdown remarkPlugins={[remarkGfm]}>{content}</Markdown>
         </div>
       </article>
     </div>
