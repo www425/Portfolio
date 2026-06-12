@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Download, Mail, MapPin, GraduationCap, Phone, FileText, BookOpen } from "lucide-react";
+import { Download, Mail, MapPin, GraduationCap, Phone, FileText, BookOpen, BookMarked } from "lucide-react";
 
 const skills = [
   "C++", "Python", "Java",
@@ -97,6 +97,15 @@ export default function AboutPage() {
           >
             <FileText className="w-4 h-4" />
             Graduate Transcript
+          </a>
+          <a
+            href="/transcript-course.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 border border-gray-300 text-gray-700 px-6 py-3 rounded-lg font-medium hover:bg-gray-50 transition-colors"
+          >
+            <BookMarked className="w-4 h-4" />
+            Course Transcript
           </a>
         </div>
       </motion.section>
