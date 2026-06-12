@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Download, Mail, MapPin, GraduationCap, Phone } from "lucide-react";
+import { Download, Mail, MapPin, GraduationCap, Phone, FileText, BookOpen } from "lucide-react";
 
 const skills = [
   "C++", "Python", "Java",
@@ -64,7 +64,7 @@ export default function AboutPage() {
           ))}
         </div>
 
-        <div className="flex gap-4">
+        <div className="flex gap-4 flex-wrap">
           <a
             href="mailto:51275902053@stu.ecnu.edu.cn"
             className="inline-flex items-center gap-2 bg-blue-600 text-white px-6 py-3 rounded-lg font-medium hover:bg-blue-700 transition-colors"
@@ -79,6 +79,24 @@ export default function AboutPage() {
           >
             <Download className="w-4 h-4" />
             Download Resume
+          </a>
+          <a
+            href="/transcript-undergrad.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 border border-gray-300 text-gray-700 px-6 py-3 rounded-lg font-medium hover:bg-gray-50 transition-colors"
+          >
+            <BookOpen className="w-4 h-4" />
+            Undergraduate Transcript
+          </a>
+          <a
+            href="/transcript-grad.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 border border-gray-300 text-gray-700 px-6 py-3 rounded-lg font-medium hover:bg-gray-50 transition-colors"
+          >
+            <FileText className="w-4 h-4" />
+            Graduate Transcript
           </a>
         </div>
       </motion.section>
